@@ -21,5 +21,23 @@ module.exports = {
                 }
             }
         })
+    },
+
+    getProductById: async (id) => {
+        const { rows } = await pool.query(`SELECT * FROM "products" WHERE "id" = $1`, [id])
+        return rows.map(row => {
+            return {
+                id: row.id,
+                title: row.title,
+                price: row.price,
+                description: row.description,
+                category: row.category,
+                image: row.image,
+                rating: {
+                    rate: row.rate,
+                    count: row.count,
+                }
+            }
+        })[0]
     }
 }
