@@ -11,15 +11,27 @@ This project is the backend side to the e-commerce portfolio project. It returns
 Create an `.env` file in the main project folder with the following environment variables:
 
 ```
-PGUSER=
-PGPASSWORD=
-PGDATABASE=
+PGUSER=""
+PGPASSWORD=""
+PGDATABASE=""
+
+ACCESS_TOKEN_SECRET=""
+ACCESS_TOKEN_EXPIRY_TIME=""
+REFRESH_TOKEN_EXPIRY_TIME=""
+
+CLIENT_URL=""
 ```
 
 Create tables and seed them by running:
 
 ```
 node ./src/db-init.js
+```
+
+Update database by running:
+
+```
+node ./src/db-update.js
 ```
 
 ## Available Scripts

@@ -1,7 +1,7 @@
-const dotenv = require('dotenv');
+const dotenv = require("dotenv");
 dotenv.config();
-const { Client } = require('pg')
-const products = require('./data/products')
+const { Client } = require("pg")
+const products = require("./data/products")
 
 const client = new Client()
 
